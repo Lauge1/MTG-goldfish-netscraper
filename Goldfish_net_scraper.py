@@ -79,10 +79,10 @@ def title_case_for_url(text):
             result.append(w)
     return ' '.join(result)
 
-excel_path = 'D:\\Projects\\To sell.xlsx'
+excel_path = '' #Enter file path here
 card_info_list = load_Cards_from_excel(excel_path)
 
-base_url = 'https://www.mtggoldfish.com/price/{set}/{card}#paper'
+base_url = 'https://www.mtggoldfish.com/price/{set}/{card}#paper' # URL HTTP creation for goldfish
 
 for card_name, set_name in card_info_list:
     card_url_name = urllib.parse.quote_plus(title_case_for_url(str(card_name)))
